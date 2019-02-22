@@ -43,14 +43,13 @@ The first step of the project involved reading in all the file paths to the imag
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
 
-All three features are extracted for every image that is a part of the training data in the extract_features function, and HOG features specifically in Final_VehicleDetectionPipeline.py Line: 109. The scikit image packages hog function used the following parameters:
-Orient = 9, Pixels_per_cell = (8,8), and cells_per_block= (2,2)
+All three features are extracted for every image that is a part of the training data in the extract_features function, and HOG features specifically in Final_VehicleDetectionPipeline.py Line: 109. The scikit image packages hog function used the following parameters: Orient = 9, Pixels_per_cell = (8,8), and cells_per_block= (2,2)
+
 These values were chosen because an orient of 9 gives a good balance between performance and size of the feature vector, our training data consists of 64x64 images and using cells that are 8x8 can gives good results. Lastly block normalization using blocks that consist of 2x2 cells helps normalize values locally while ensuring that the processing time is relatively quick.
+
 When extracting these features, I decided to use the L channel of the LUV color space. I experimented with both the L channel, as well as the Y channel from the YCrCb color channel and found a better result from using the Lightness channel. I also found that using all 3 color channels provided a better classifier, but the processing time of extracting features would greatly increase.
+
 After all the training data’s features were extracted, the feature vectors were normalized so certain features like color values don’t overwhelm the HOG feature (Final_VehicleDetectionPipeline.py Line: 161). After the feature vectors were normalized, I shuffled the training data and split off 20% as testing data.  I then trained a Linear Support Vector Machine with the features and their labeled data (Final_VehicleDetectionPipeline.py Line: 182). 
 The trained SVM had an accuracy of 98.15% on the test data.
 
@@ -62,15 +61,16 @@ The trained SVM can now classify 64x64 images as either car or non-car images. I
 ![Histogram of Oriented Gradients](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/HOG_Image.jpg "Histogram of Oriented Gradients")
 
 Afterwards the image was separated into its blocks, and each 64x64 section of the image was classified as either a vehicle or a non-vehicle. The detect_vehicles function returns the co-ordinates for each box that was classified as a car.
+
 In order to effectively find cars that vary in size in a larger image, the scale of the windows searched needs to vary. I used a scale of 1, 1.5 and 2, meaning vehicles were effectively searched in 64x64, 96x96, and 128x128 windows. These scales were chosen because they detected the required vehicles in all the images well while also limiting the number of sliding windows searched. Because each window requires features to be extracted, the more windows you have, the longer it takes to detect vehicles.
+
 To limit the number of windows searched, regions searched by each scale varied by size (Final_VehicleDetectionPipeline.py Line: 409-423), where the smaller windows would search smaller regions with some minor overlap. 
+
 I decided regions of overlap based on areas I found the SVM was having trouble classifying windows as cars and non-cars. The overlap provided a way to ensure multiple windows would need to properly detect a car when rejecting false positives later on.
+
 Below is an image of all the windows the SVM classified as a car.
 
-
-
 ![Windows Classified as Vehicles](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/classified_windows.png "Windows Classified as Vehicles")
-
 
 Finding a balance between the number of windows searched with the time it takes to extract features from each image and classify it took a lot of testing, but I settled on a good balance with one color channel to extract features from, and limiting the area where windows search for vehicles.
 
@@ -82,10 +82,9 @@ The final output video is named project_videooutput.mp4. In order to remove fals
 
 ![Heat Map of Detected Windows](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/HeatMap_image.jpg "Heat Map of Detected Windows")
 
-I then used scipy.ndimage.measurements.label() to get the final bouding boxes for the vehicles and drew them on the output frame.
-With the final bounding boxes, I also calculated its centroid to more accuratly detect where on the image the detected vehicle is. I also ensured that I average centroid values for the last 20 frames, and display them in the final video. These centroid values can be fit to a second order polynomial in order to predict future positions of each vehicle.
-All tracking of data was handled with the VideoTracker class (Final_VideoDetectionPipeline.py Line: 498-625) 
+I then used scipy.ndimage.measurements.label() to get the final bouding boxes for the vehicles and drew them on the output frame. With the final bounding boxes, I also calculated its centroid to more accuratly detect where on the image the detected vehicle is. I also ensured that I average centroid values for the last 20 frames, and display them in the final video. These centroid values can be fit to a second order polynomial in order to predict future positions of each vehicle.
 
+All tracking of data was handled with the VideoTracker class (Final_VideoDetectionPipeline.py Line: 498-625) 
 
 ![Final Output Image](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/final_output_image.png "Final Output Image")
 
