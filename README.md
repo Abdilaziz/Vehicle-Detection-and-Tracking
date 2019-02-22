@@ -29,14 +29,14 @@ Histogram of Oriented Gradients (HOG) features are used to get shape information
 
 The first step of the project involved reading in all the file paths to the images used to train the classifier. I used 9701 car images, and 8968 non-car images. Here is an example of images in each class.
 
----
+```
 
 <img align="left" width="100" height="100" src="https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/vehicle_image.png">
 
 
 <img align="right" width="100" height="100" src="https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/non_vehicle_image.png">
 
----
+```
 
 All three features are extracted for every image that is a part of the training data in the extract_features function, and HOG features specifically in Final_VehicleDetectionPipeline.py Line: 109. The scikit image packages hog function used the following parameters:
 Orient = 9, Pixels_per_cell = (8,8), and cells_per_block= (2,2)
