@@ -30,6 +30,11 @@ Histogram of Oriented Gradients (HOG) features are used to get shape information
 The first step of the project involved reading in all the file paths to the images used to train the classifier. I used 9701 car images, and 8968 non-car images. Here is an example of images in each class.
 
 <br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 <img align="left" width="100" height="100" src="https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/vehicle_image.png">
@@ -84,7 +89,7 @@ All tracking of data was handled with the VideoTracker class (Final_VideoDetecti
 ![Final Output Image](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/final_output_image.png "Final Output Image")
 
 
-Links:
+## Links:
 
 Labeled data for [vehicle](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/vehicles.zip) and [non-vehicle](https://s3.amazonaws.com/udacity-sdc/Vehicle_Tracking/non-vehicles.zip) examples to train the classifier.  
 
