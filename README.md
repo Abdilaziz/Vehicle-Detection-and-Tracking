@@ -17,36 +17,33 @@ We can then filter out bad classifications by grouping up detections in the same
 ## Discussion
 
 
-![Screenshot](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/spatial_binning.jpg "Spatial Binning of Colour")
+![Spatial Binning of Colour](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/spatial_binning.jpg "Spatial Binning of Colour")
 
 
 
 
-![Screenshot](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/vehicle_image.png "Vehicle Image")
+![Vehicle Image](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/vehicle_image.png "Vehicle Image")
 
 
 
-![Screenshot](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/non_vehicle_image.png "Non-Vehicle Image")
+![Non-Vehicle Image](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/non_vehicle_image.png "Non-Vehicle Image")
 
 
-![Screenshot](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/non_vehicle_image.png "Non-Vehicle Image")
-
-
-![Screenshot](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/HOG_Image.jpg "Histogram of Oriented Gradients")
-
-
-
-
-![Screenshot](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/classified_windows.png "Windows Classified as Vehicles")
+![Histogram of Oriented Gradients](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/HOG_Image.jpg "Histogram of Oriented Gradients")
 
 
 
 
-![Screenshot](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/HeatMap_image.jpg "Heat Map of Detected Windows")
+![Windows Classified as Vehicles](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/classified_windows.png "Windows Classified as Vehicles")
 
 
 
-![Screenshot](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/final_output_image.png "Final Output Image")
+
+![Heat Map of Detected Windows](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/HeatMap_image.jpg "Heat Map of Detected Windows")
+
+
+
+![Final Output Image](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/blob/master/images/final_output_image.png "Final Output Image")
 
 
 Links:
