@@ -17,19 +17,36 @@ We can then filter out bad classifications by grouping up detections in the same
 ## Discussion
 
 
-
-
-![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/master/images/vehicle_image.png "Vehicle Image")
-
+![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/spatial_binning.jpg "Spatial Binning of Colour")
 
 
 
 
+![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/vehicle_image.png "Vehicle Image")
+
+
+
+![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/non_vehicle_image.png "Non-Vehicle Image")
+
+
+![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/non_vehicle_image.png "Non-Vehicle Image")
+
+
+![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/HOG_Image.jpg "Histogram of Oriented Gradients")
 
 
 
 
+![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/classified_windows.png "Windows Classified as Vehicles")
 
+
+
+
+![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/HeatMap_image.jpg "Heat Map of Detected Windows")
+
+
+
+![alt text](https://github.com/Abdilaziz/Vehicle-Detection-and-Tracking/tree/master/images/final_output_image.png "Final Output Image")
 
 
 Links:
